@@ -9,4 +9,6 @@ public class CreateQuestionViewModel
     public QuestionKind Kind { get; init; }
 
     public List<string>? Options { get; init; }
+
+    public string ProgrammeId { get; init; } = string.Empty;
 }

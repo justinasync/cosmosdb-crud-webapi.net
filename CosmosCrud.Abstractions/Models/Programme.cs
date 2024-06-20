@@ -10,5 +10,5 @@ public class Programme : IItem
 
     public string Description { get; set; } = string.Empty;
 
-    public List<string> QuestionIds { get; set; } = new();
+    public List<Question> Questions { get; set; } = new();
 }

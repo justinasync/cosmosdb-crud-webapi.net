@@ -12,6 +12,9 @@ public interface IRepository
     Task<TItem?> GetItem<TItem>(string id, string partitionKey, CancellationToken ct = default)
         where TItem : class, IItem;
 
+    Task<TItem?> GetItem<TItem>(QueryDefinition query, CancellationToken ct = default)
+        where TItem : class, IItem;
+
     Task AddItem<TItem>(TItem item, CancellationToken ct = default)
         where TItem : class, IItem;
 

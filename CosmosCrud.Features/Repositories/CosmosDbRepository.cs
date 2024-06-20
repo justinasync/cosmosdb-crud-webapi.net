@@ -73,6 +73,20 @@ public class CosmosDbRepository : IRepository
         }
     }
 
+    public async Task<TItem?> GetItem<TItem>(QueryDefinition query, CancellationToken ct = default) where TItem : class, IItem
+    {
+        var container = await getOrCreateContainer<TItem>(ct);
+        var iterator = container.GetItemQueryIterator<TItem>(query);
+
+        if (iterator.HasMoreResults)
+        {
+            var response = await iterator.ReadNextAsync(ct);
+            return response.FirstOrDefault();
+        }
+
+        return null;
+    }
+
     public async Task AddItem<TItem>(TItem item, CancellationToken ct = default)
         where TItem : class, IItem
     {
