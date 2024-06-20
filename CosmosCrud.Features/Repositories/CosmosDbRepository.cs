@@ -18,7 +18,7 @@ public class CosmosDbRepository : IRepository
 
     public CosmosDbRepository(IOptions<CosmosDbConfig> cosmosDbConfig) : this(new CosmosClient(
             cosmosDbConfig.Value.EndpointUri,
-            cosmosDbConfig.Value.EndpointPrimaryKey,
+            cosmosDbConfig.Value.EndpointKey,
             new CosmosClientOptions
             {
                 ApplicationName = cosmosDbConfig.Value.ApplicationName,
