@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using DotnetAssessment.Abstractions.Models;
 using DotnetAssessment.Abstractions.Repositories;
 using DotnetAssessment.Abstractions.Utils;
@@ -44,7 +45,7 @@ public class ProgrammesController(IRepository repository) : ControllerBase
     }
 
     [HttpGet]
-    public async IAsyncEnumerable<Programme> GetProgrammes(CancellationToken ct = default)
+    public async IAsyncEnumerable<Programme> GetProgrammes([EnumeratorCancellation] CancellationToken ct = default)
     {
         await foreach (var programme in repository.GetItems<Programme>(ct: ct))
         {
@@ -52,14 +53,13 @@ public class ProgrammesController(IRepository repository) : ControllerBase
         }
     }
 
-    [HttpGet("{programmeId}/questions/by-kind/{questionKind}")]
+    [HttpGet("questions/by-kind/{questionKind}")]
     public async Task<ActionResult<List<Question>>>
-        GetQuestionsByKind(string programmeId, string questionKind, CancellationToken ct = default)
+        GetQuestionsByKind(string questionKind, CancellationToken ct = default)
     {
         var programme = await repository.GetItem<Programme>(
             new QueryDefinition(
-                    $"SELECT p, q FROM c p JOIN q IN p.{questionsColumnName} WHERE p.{idColumnName} = @programmeId AND q.{questionKindColumnName} = @questionKind")
-                .WithParameter("@programmeId", programmeId)
+                    $"SELECT * FROM c JOIN q IN c.{questionsColumnName} WHERE q.{questionKindColumnName} = @questionKind")
                 .WithParameter("@questionKind", questionKind),
             ct);
 
@@ -70,7 +70,7 @@ public class ProgrammesController(IRepository repository) : ControllerBase
 
         return Ok(programme.Questions);
     }
-    
+
     [HttpGet("{programmeId}")]
     public async Task<ActionResult<Programme>> GetProgramme(string programmeId, CancellationToken ct = default)
     {

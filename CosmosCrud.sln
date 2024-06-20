@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosCrud.Api", "CosmosCrud.Api\CosmosCrud.Api.csproj", "{69463404-4C88-4480-AAFF-781933AFCC41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosCrud.Abstractions", "CosmosCrud.Abstractions\CosmosCrud.Abstractions.csproj", "{847CFA89-7963-41DE-864F-926B92389394}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosCrud.Features", "CosmosCrud.Features\CosmosCrud.Features.csproj", "{A2426111-C88B-4AEF-AA1A-90CD80BC049E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosCrud.Api.Tests", "CosmosCrud.Api.Tests\CosmosCrud.Api.Tests.csproj", "{C1A51225-F8F3-4590-B104-A1EA71785BDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69463404-4C88-4480-AAFF-781933AFCC41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69463404-4C88-4480-AAFF-781933AFCC41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69463404-4C88-4480-AAFF-781933AFCC41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69463404-4C88-4480-AAFF-781933AFCC41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{847CFA89-7963-41DE-864F-926B92389394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{847CFA89-7963-41DE-864F-926B92389394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{847CFA89-7963-41DE-864F-926B92389394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{847CFA89-7963-41DE-864F-926B92389394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2426111-C88B-4AEF-AA1A-90CD80BC049E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2426111-C88B-4AEF-AA1A-90CD80BC049E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2426111-C88B-4AEF-AA1A-90CD80BC049E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2426111-C88B-4AEF-AA1A-90CD80BC049E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A51225-F8F3-4590-B104-A1EA71785BDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A51225-F8F3-4590-B104-A1EA71785BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A51225-F8F3-4590-B104-A1EA71785BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A51225-F8F3-4590-B104-A1EA71785BDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -22,4 +22,10 @@
         <ProjectReference Include="..\CosmosCrud.Features\CosmosCrud.Features.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Include="appsettings.Testing.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
